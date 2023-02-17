@@ -38,7 +38,6 @@ namespace progress_file_and_overall
         {
             string[] files = Directory.GetFiles(selectedPath, "*.*", SearchOption.AllDirectories);
 
-
             for (int count = 0; count < files.Length; count++)
             {
                 progressBarOverall.Value = (int)((count/(float)files.Length) * 100);
@@ -47,28 +46,20 @@ namespace progress_file_and_overall
                 using (FileStream fileStream = new FileStream(path, FileMode.Open))
                 {
                     int offset = 0;
-                    long len = fileStream.Length;
-                    byte[] buffer = new byte[len];
-
+                    long length = fileStream.Length;
+                    byte[] buffer = new byte[length];
                     int readLen = ONE_MB;
-
-                    while (offset != len)
+                    while (offset != length)
                     {
-                        if (offset + readLen > len)
+                        if (offset + readLen > length)
                         {
-                            readLen = (int)len - offset;
+                            readLen = (int)length - offset;
                         }
                         else
                         {   /* G T K */
                         }
                         offset += await fileStream.ReadAsync(buffer, offset, readLen);
-                    }
-                    if(Path.GetExtension(path) == ".sqdr")
-                    {
-                        string string64 = Encoding.UTF8.GetString(buffer);
-                        byte[] bytes = Convert.FromBase64String(string64);
-                        var json = Encoding.UTF8.GetString(bytes);
-                        { }
+                        progressBarSingle.Value = (int)((offset / (float)length) * 100);
                     }
                 }
             }
