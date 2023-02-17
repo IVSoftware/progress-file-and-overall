@@ -33,7 +33,7 @@
             this.progressBarOverall = new System.Windows.Forms.ProgressBar();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.browseFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiBrowseFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -88,16 +88,16 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.browseFolderToolStripMenuItem});
+            this.tsmiBrowseFolder});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(67, 36);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // browseFolderToolStripMenuItem
+            // tsmiBrowseFolder
             // 
-            this.browseFolderToolStripMenuItem.Name = "browseFolderToolStripMenuItem";
-            this.browseFolderToolStripMenuItem.Size = new System.Drawing.Size(283, 40);
-            this.browseFolderToolStripMenuItem.Text = "Browse Folder...";
+            this.tsmiBrowseFolder.Name = "tsmiBrowseFolder";
+            this.tsmiBrowseFolder.Size = new System.Drawing.Size(283, 40);
+            this.tsmiBrowseFolder.Text = "Browse Folder...";
             // 
             // MainForm
             // 
@@ -124,6 +124,6 @@
         private System.Windows.Forms.ProgressBar progressBarOverall;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem browseFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiBrowseFolder;
     }
 }
