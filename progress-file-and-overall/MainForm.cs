@@ -48,22 +48,19 @@ namespace progress_file_and_overall
                     int offset = 0;
                     long length = fileStream.Length;
                     byte[] buffer = new byte[length];
-                    int readLen = ONE_MB;
+                    int readLength = ONE_MB;
                     while (offset != length)
                     {
-                        if (offset + readLen > length)
+                        if (offset + readLength > length)
                         {
-                            readLen = (int)length - offset;
+                            readLength = (int)length - offset;
                         }
-                        else
-                        {   /* G T K */
-                        }
-                        offset += await fileStream.ReadAsync(buffer, offset, readLen);
+                        offset += await fileStream.ReadAsync(buffer, offset, readLength);
                         progressBarSingle.Value = (int)((offset / (float)length) * 100);
                     }
                 }
             }
-            progressBarOverall.Visible = false;
+            tableLayoutPanelStatus.Visible = false;
         }
     }
 }
